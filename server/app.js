@@ -17,7 +17,7 @@ db.query(`insert into checktable(name, sex, department) values ('chala', 'male',
 //routes
 app.post('/register', (req, res)=>{
     console.log(req.body)
-    res.json({"message": "The record successfully updated!"})
+    res.json({"message": "The record has been successfully updated!"})
 })
 app.listen(5000, ()=>{
     console.log("app running in port 5000")
