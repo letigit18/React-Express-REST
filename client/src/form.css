@@ -1,0 +1,22 @@
+.form-container{
+    width: 60%;
+    height: 70vh;
+}
+form .form-control{
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+}
+.btn{
+    border: none;
+    background-color: green;
+    color: white;
+    padding: 7px 10px;
+    border-radius: 2px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.error{
+    display: block;
+    color: red;
+}
