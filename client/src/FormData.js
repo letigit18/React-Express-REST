@@ -11,11 +11,11 @@ const FormData = () =>{
     setError((error)=> ({...error, nameError: "Name required"}))
    }
    else if(/^[A-Za-z]{3,30}$/.test(userData.fname) === false){
-    setError((error)=> ({...error, nameError: "please provide valid name"}))
+    setError((error)=> ({...error, nameError: "Invalid name"}))
    }
    
    else{
-    setUserData((userData)=>({...userData, fname: userData.fname}))
+    setStatus(1)
    }
    //validating department
    if(userData.department === ''){
