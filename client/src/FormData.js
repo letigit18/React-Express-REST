@@ -1,9 +1,18 @@
+import { Link } from 'react-router-dom';
 import './form.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 const FormData = () =>{
   let [userData, setUserData] = useState({fname: '', sex: '', department: ""})
   let [error, setError] = useState ({nameError: '', sexError: '', departmentError: ''})
   let [status, setStatus] = useState(0);
+  const [data , setData] = useState([])
+  useEffect(()=>{
+    fetch('http://localhost:5000')
+    .then((res)=> res.json())
+    .then((data)=> setData(data))
+  }, 
+  
+  [])
   const handleSubmit = (e)=>{
     e.preventDefault();
    //validating name
@@ -68,6 +77,30 @@ const FormData = () =>{
               <span className='error'>{error.sexError}</span>
               <button type='submit' className='btn'>Register</button>
             </form>
+            <div className='result'>
+            <table>
+                  <tr>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Sex</th>
+                    <th>Actions</th>
+                  </tr>
+              {data.map((student, index)=>(
+               
+                  <tr>
+                    <td key={index}>{student.name}</td>
+                    <td key={index}>{student.department}</td>
+                    <td key={index}>{student.sex}</td>
+                    <td>
+                      <Link to="">View </Link>
+                      <Link to=""> Edit</Link>
+                      <Link to=""> Delete</Link>
+                    </td>
+                  </tr>
+               
+              ))}
+              </table>
+            </div>
          </div>
         </>
     )

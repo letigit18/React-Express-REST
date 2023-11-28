@@ -1,11 +1,16 @@
 .form-container{
     width: 60%;
     height: 70vh;
+    display: flex;
+    justify-content: space-around;
 }
 form .form-control{
     display: block;
     margin-top: 10px;
     width: 100%;
+}
+table td{
+    padding: 10px;
 }
 .btn{
     border: none;
